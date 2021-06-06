@@ -1,0 +1,25 @@
+ [
+        {
+            "coin": {
+                "name": "Bitcoin",
+                "imageUrl": "btc.png"
+            },
+            "ticket": "BTC",
+            "price": 38000.00,
+            "volume": 48489393.00,
+            "change": 23.00,
+            "mktcap": 8798798.00
+        },
+        {
+            "coin": {
+                "name": "Ethereum",
+                "imageUrl": "etr.png"
+            },
+            "ticket": "ETR",
+            "price": 1800.00,
+            "volume": 6665533.00,
+            "change": 23.00,
+            "mktcap": 8798798.00
+        }
+    
+]
