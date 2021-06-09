@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Item from './Item'
 
-
 const Container = styled.div`
     margin-top: 2rem;
     width: 100%;
