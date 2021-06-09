@@ -59,21 +59,21 @@ const MktCap = styled.div`
 
 
 function Crypto ({ data }) {
-    const { coin, ticket, price, volume, change, mktcap, img } = data;
+    const { name, image, symbol, current_price, total_volume, price_change_percentage_24h, market_cap} = data;
 
     return (
         <Container>
             <Coin>
-                <CoinImg src={"https://s3799204crypto.s3.amazonaws.com/" + img } />
+                <CoinImg src={"https://s3799204crypto.s3.amazonaws.com/" + image } />
                 <CoinText>
-                    {coin}
+                    {name}
                 </CoinText>
             </Coin>
-            <Ticket>{ticket}</Ticket>
-            <Price>${price}</Price>
-            <Volume>${volume}</Volume>
-            <Change>${change}</Change>
-            <MktCap>${mktcap}</MktCap>
+            <Ticket>{symbol.toUpperCase()}</Ticket>
+            <Price>${current_price}</Price>
+            <Volume>${total_volume.toLocaleString()}</Volume>
+            <Change>${price_change_percentage_24h.toFixed(2)}</Change>
+            <MktCap>${market_cap.toLocaleString()}</MktCap>
         </Container>
 
     )

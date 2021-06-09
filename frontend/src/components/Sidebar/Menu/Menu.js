@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Item from './Item'
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     margin-top: 2rem;
@@ -11,9 +12,8 @@ const Container = styled.div`
 function Menu () {
     return (
         <Container>
-            <Item title="Home" icon={'home'} active/>
-            <Item title="History" icon={'chart-histogram'}/>
-            <Item title="Log out" icon={'arrange-send-backward'}/>
+            <Link to="/"><Item title="Home" icon={'home'} active/> </Link>
+            <Link to="/live"><Item title="Live Price" icon={'chart-histogram'}/> </Link>
         </Container>
     )
 }

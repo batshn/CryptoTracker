@@ -29,7 +29,6 @@ function Main () {
     return(
         <Container>
             <Exit/>
-            <NewCryptoBtn/>
             <CryptoList data={coins} />
         </Container>
     );

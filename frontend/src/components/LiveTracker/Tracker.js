@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import Coin from './Coin';
+import {Button} from 'react'
 
 
 // get Cryptocurrency API from Coingecko.com
@@ -26,6 +27,12 @@ function Tracker() {
     coin.name.toLowerCase().includes(search.toLowerCase())
     )
 
+    function addBook(data) {
+      axios.post('https://y9zhowcmfi.execute-api.us-east-1.amazonaws.com/prod/crypto', data).then((response) => {
+          console.log(response);
+      });
+    }
+
   return (
     <div className="coin-app">
       <div className="coin-search">
@@ -34,30 +41,26 @@ function Tracker() {
           <input type="text" placeholder="Search" className="coin-input" onChange={handleChange}/>
         </form>
       </div>
+
+      <a href="#" onClick={addBook(coins)}>IMPORT</a>
+    <br/>
       <div className="coin-row">
         <div className="coin">
           <p className="coin-symbol">Coin Name</p>
         </div>
         <div className="coin-data">
           <p className="coin-mark coin-symbol">symbol</p>
-          <p className="coin-price coin-symbol">Current Price</p>
+          <p className="coin-price coin-symbol">Price</p>
           <p className="coin-volume coin-symbol">Volume</p>
           <p className="coin-percent coin-symbol">Price Change</p>
           <p className="coin-marketcap coin-symbol">Market Cap</p>
         </div>
       </div>
-      {filteredCoins.map(coin => {
-        return <Coin 
-        key={coin.id} 
-        name = {coin.name} 
-        image = {coin.image} 
-        symbol = {coin.symbol}
-        marketcap = {coin.market_cap}
-        price = {coin.current_price}
-        priceChange = {coin.price_change_percentage_24h}
-        volume = {coin.total_volume}
-        />;
-      })}
+      {filteredCoins.map(coin => (
+        <Coin data={coin} key="symbol"/>
+        
+      ))}
+
     </div>
   );
 }
