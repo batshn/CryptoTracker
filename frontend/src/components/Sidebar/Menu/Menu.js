@@ -12,7 +12,7 @@ const Container = styled.div`
 function Menu () {
     return (
         <Container>
-            <Link to="/"><Item title="Home" icon={'home'} active/> </Link>
+            <Link to="/"><Item title="Home Page" icon={'home'} active/> </Link>
             <Link to="/live"><Item title="Live Price" icon={'chart-histogram'}/> </Link>
         </Container>
     )
