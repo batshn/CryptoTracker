@@ -64,7 +64,7 @@ function Crypto ({ data }) {
     return (
         <Container>
             <Coin>
-                <CoinImg src={"https://s3799204crypto.s3.amazonaws.com/" + image } />
+                <CoinImg src={"https://s3799204crypto.s3.amazonaws.com/" + symbol +".png" } />
                 <CoinText>
                     {name}
                 </CoinText>
